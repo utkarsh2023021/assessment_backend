@@ -7,8 +7,12 @@ const cors = require('cors');
 const app = express();
 
 
+
+
 app.use(cors({
-  origin: '*',
+  origin: ['http://localhost:3000', 'https://your-frontend.vercel.app'], // Replace with your frontend URLs
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, 
 }));
 app.use(bodyParser.json());
 
